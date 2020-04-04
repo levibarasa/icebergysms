@@ -23,7 +23,34 @@ Route::get('details', 'UserController@details');
 Route::get('logout', 'UserController@logout');
 
 
+//user
+Route::get('useraccounts','UserController@getAllUsers');
+Route::put('useraccounts/{userid}','UserController@userUpdate');
+Route::get('useraccounts/{userid}','UserController@userById');
+Route::post('useraccounts','UserController@userCreate');
+Route::delete('useraccounts','UserController@userDelete');
 
+
+//institution
+Route::get('institutions','InstitutionController@getAllInstitutions');
+Route::put('institutions/{institutionid}','InstitutionController@institutionUpdate');
+Route::get('institutions/{institutionid}','InstitutionController@institutionById');
+Route::post('institutions','InstitutionController@institutionCreate');
+Route::delete('institutions','InstitutionController@institutionDelete');
+
+//task
+Route::get('tasks','TaskController@getAllTasks');
+Route::put('tasks/{id}','TaskController@taskUpdate');
+Route::get('tasks/{id}','TaskController@taskById');
+Route::post('tasks','TaskController@taskCreate');
+Route::delete('tasks','TaskController@taskDelete');
+
+//price
+Route::get('prices','PriceController@getAllPrices');
+Route::put('prices/{id}','PriceController@priceUpdate');
+Route::get('prices/{id}','PriceController@priceById');
+Route::post('prices','PriceController@priceCreate');
+Route::delete('prices','PriceController@priceDelete');
 //receipient
 Route::get('receipient','ReceipientController@getAllReceipients');
 Route::put('receipient/{id}','ReceipientController@receipientUpdate');

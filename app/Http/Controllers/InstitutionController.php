@@ -9,7 +9,8 @@ use Validator;
 class InstitutionController extends Controller
 {
     public function getAllInstitutions(){
-        return response()->json(InstitutionModel::get(), 200);
+        $institution = InstitutionModel::orderBy('created_at', 'desc')->paginate(5);
+        return response()->json($institution, 200);
     }
 
     public function institutionById($institutionid){
