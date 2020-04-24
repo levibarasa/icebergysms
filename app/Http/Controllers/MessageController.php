@@ -23,8 +23,8 @@ class MessageController extends Controller
 
     public function messageCreate(Request  $request){
             $rules = [
-                'insitutionname' => 'required|min:3',
-                'active' => 'required|min:1|max:1',
+                'phone' => 'required',
+                'message' => 'required',
             ];
             $validator = Validator::make($request->all(),$rules);
             if($validator->fails()){

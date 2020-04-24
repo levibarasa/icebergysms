@@ -23,6 +23,8 @@ Route::get('details', 'UserController@details');
 Route::get('logout', 'UserController@logout');
 
 
+// send sms
+Route::post('sendsms','SendSMSController@sendSms');
 //user
 Route::get('useraccounts','UserController@getAllUsers');
 Route::put('useraccounts/{userid}','UserController@userUpdate');
